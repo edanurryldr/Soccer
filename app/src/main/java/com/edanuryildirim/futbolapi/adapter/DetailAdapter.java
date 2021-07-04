@@ -17,7 +17,8 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailHold
 
     private ArrayList<FutbolModel> detailList;
 
-    public DetailAdapter(ArrayList<FutbolModel> detailList){
+    public DetailAdapter(ArrayList<FutbolModel> detailList)
+    {
         this.detailList = detailList;
     }
 

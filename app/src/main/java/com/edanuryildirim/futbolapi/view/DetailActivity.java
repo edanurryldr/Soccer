@@ -33,6 +33,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView date;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

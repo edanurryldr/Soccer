@@ -3,8 +3,12 @@ package com.edanuryildirim.futbolapi.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +30,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+        Switch aSwitch;
+        savesharePrefences pref;
+
         ArrayList<FutbolModel> futbolModels;
         private String BASE_URL = "https://raw.githubusercontent.com/";
         Retrofit retrofit;
@@ -35,7 +42,35 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        aSwitch= findViewById(R.id.switchh);
+
+        pref=new savesharePrefences(this);
+
+        if(pref.getState()==true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else{
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        if(pref.getState()==true){
+            aSwitch.setChecked(true);
+        }
+
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
+                    pref.setState(true);
+                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }else{
+                    pref.setState(false);
+                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+
+            }
+        });
 
         recyclerView =findViewById(R.id.recyclerView);
 
@@ -75,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     public void Fikstur(View view) {
-
         Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
         startActivity(intent);
     }
