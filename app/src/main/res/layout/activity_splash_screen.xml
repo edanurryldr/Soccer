@@ -23,7 +23,7 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SOCCER LEAGUE"
+        android:text="SOCCER LEAUGE"
         android:textSize="23sp"
         android:textStyle="bold"
         android:textColor="@color/color5"
