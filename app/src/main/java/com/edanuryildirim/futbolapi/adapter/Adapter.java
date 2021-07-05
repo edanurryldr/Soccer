@@ -55,7 +55,10 @@ public class Adapter extends PagerAdapter {
         team2.setText(models.get(position).team2);
 
         score1=view.findViewById(R.id.score1);
-        score1.setText(models.get(position).score.ft.get(position));
+        score1.setText(models.get(position).score.ft.get(1).toString());
+
+        score2= view.findViewById(R.id.score2);
+        score2.setText(models.get(position).score.ft.get(0).toString());
 
         container.addView(view,0);
         return view;
