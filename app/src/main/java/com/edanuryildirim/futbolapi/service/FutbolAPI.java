@@ -11,9 +11,7 @@ public interface FutbolAPI {
 
     //GET,POST,UPDATE,DELETE
 
-    @GET("edanurryldr/SoccerLeague/main/futbol.json")
+    @GET("edanurryldr/SoccerLeauge/main/futbol.json")
     Call<List<FutbolModel>> getData();
-
-
 
 }

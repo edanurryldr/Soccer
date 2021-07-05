@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.edanuryildirim.futbolapi.R;
 import com.edanuryildirim.futbolapi.model.FutbolModel;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailHolder>{
 
-    private ArrayList<FutbolModel> detailList;
+    private List<FutbolModel> detailList;
 
-    public DetailAdapter(ArrayList<FutbolModel> detailList)
+    public DetailAdapter(List<FutbolModel> detailList)
     {
         this.detailList = detailList;
     }
@@ -41,7 +41,7 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailHold
     }
 
     public class DetailHolder extends RecyclerView.ViewHolder {
-        TextView team1,team2,score1,score2;
+        TextView team1,team2,score1,score2,date;
 
         public DetailHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +60,9 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailHold
 
             score2 = itemView.findViewById(R.id.score2);
             score2.setText(futbolModel.score.ft.get(0).toString());
+
+            date=itemView.findViewById(R.id.date);
+            date.setText(futbolModel.score.ft.get(1).toString());
 
 
         }

@@ -1,5 +1,6 @@
 package com.edanuryildirim.futbolapi.model;
 
+
 public class Model {
     private int image;
     private String title;
@@ -35,6 +36,3 @@ public class Model {
         this.desc = desc;
     }
 }
-
-
-

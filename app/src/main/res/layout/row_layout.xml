@@ -11,6 +11,7 @@
         android:id="@+id/text_teamName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"

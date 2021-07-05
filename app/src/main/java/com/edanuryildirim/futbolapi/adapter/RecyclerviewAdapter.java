@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.edanuryildirim.futbolapi.R;
 import com.edanuryildirim.futbolapi.model.FutbolModel;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.RowHolder> {
 
-    private ArrayList<FutbolModel> futbolList;
+    private List<FutbolModel> futbolList;
 
 
-    public RecyclerviewAdapter(ArrayList<FutbolModel> futbolList) {
+    public RecyclerviewAdapter(List<FutbolModel> futbolList) {
         this.futbolList = futbolList;
     }
 
